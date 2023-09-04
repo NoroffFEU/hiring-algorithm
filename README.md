@@ -1,2 +1,2 @@
 # hiring-algorithm
-An example algorithm used in a fictional hiring scenario to discriminate students.
+An example algorithm used in a fictional hiring scenario to discriminate candidates.
