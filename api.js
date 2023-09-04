@@ -38,13 +38,18 @@ function applyRestrictions(candidates) {
 }
 
 function findAllCSSPeople(candidates) {
-  const passingCandidates = []
+  return candidates.filter((candidate) => {
+    return candidate.skills.includes("CSS")
+  })
+}
 
-  for (let candidate of candidates) {
-    for (let skill of candidate.skills) {
-      if (skill !== "CSS") {
-        continue;
-      }
+function lookupPerson(query, candidates) {
+  return candidates.find((candidate) => candidate.name.includes(query))
+}
+
+function advancedLookup(queryFunction, candidates) {
+  return candidates.find(queryFunction)
+}
 
       passingCandidates.push(candidate)
     }
