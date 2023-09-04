@@ -49,7 +49,7 @@
   },
   {
     "name": "Grace",
-    "dob": "1998-09-25T00:00:00Z",
+    "dob": "2008-09-25T00:00:00Z",
     "interests": ["Cycling", "Making Jam"],
     "skills": ["JS", "React"],
     "onlineOnly": true,
@@ -68,16 +68,14 @@
     "dob": "1970-02-17T00:00:00Z",
     "interests": ["Making Jam", "Cooking"],
     "skills": ["Angular", "JS"],
-    "onlineOnly": true,
-    "cvURL": "http://example.com/isabel-cv"
+    "onlineOnly": true
   },
   {
     "name": "Jack",
     "dob": "1992-01-12T00:00:00Z",
     "interests": ["Cycling", "Gaming"],
     "skills": ["CSS", "React"],
-    "onlineOnly": false,
-    "cvURL": "http://example.com/jack-cv"
+    "onlineOnly": false
   },
   {
     "name": "Kathy",
