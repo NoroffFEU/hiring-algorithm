@@ -51,11 +51,27 @@ function advancedLookup(queryFunction, candidates) {
   return candidates.find(queryFunction)
 }
 
-      passingCandidates.push(candidate)
-    }
+function sortByAge(a, b) {
+  a = new Date(a.dob)
+  b = new Date(b.dob)
+
+  if (a < b) {
+    return 1
   }
 
-  return passingCandidates;
+  if (b < a) {
+    return -1
+  }
+
+  return 0
+}
+
+function sortBySkills(a, b) {
+  a = a.skills.length;
+  b = b.skills.length;
+
+  return b - a;
+}
 }
 
 async function app() {
