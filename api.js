@@ -9,36 +9,19 @@ async function getCandidates() {
   throw new Error("Failed to get candidates!");
 }
 
-function applyAgeRestriction(candidates) {
-  let passingCandidates = [];
-
+function filterByAge(candidate) {
   const targetDate = new Date()
   const thisYear = targetDate.getFullYear()
   targetDate.setUTCFullYear(thisYear - 18)
+  return new Date(candidate.dob) < targetDate
+}
 
-  for (candidate of candidates) {
-    const dob = new Date(candidate.dob);
-    if (dob < targetDate) {
-      passingCandidates.push(candidate);
-    }
-  }
-
-  return passingCandidates;
+function applyAgeRestriction(candidates) {
+  return candidates.filter(filterByAge)
 }
 
 function applyCVRestriction(candidates) {
-  let passingCandidates = [];
-
-  for (candidate of candidates) {
-    for (key in candidate) {
-      if (key === "cvURL") {
-        passingCandidates.push(candidate);
-        break;
-      }
-    }
-  }
-
-  return passingCandidates;
+  return candidates.filter((candidate) => Boolean(candidate.cvURL))
 }
 
 function applyRestrictions(candidates) {
