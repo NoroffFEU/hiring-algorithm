@@ -72,11 +72,21 @@ function sortBySkills(a, b) {
 
   return b - a;
 }
+
+function createSkillsSummary(candidates) {
+  const listOfSkills = candidates.reduce((allSkills, candidate) => {
+    allSkills.push(candidate.skills)
+    return allSkills
+  }, []).flatMap(item => item)
+
+  const setOfSkills = Array.from(new Set(listOfSkills))
+  return setOfSkills
 }
 
 async function app() {
   try {
     const candidates = await getCandidates();
+    window.candidates = candidates;
     console.log('All applicants:',candidates);
 
     const roundOne = applyRestrictions(candidates);
@@ -84,8 +94,12 @@ async function app() {
 
     const roundTwo = findAllCSSPeople(roundOne);
     console.log('Round Two:',roundTwo);
-    // Find each candidate interested in CSS
 
+    const sortedBySkills = candidates.sort(sortBySkills)
+    console.log(sortedBySkills);
+
+    const allSkills = createSkillsSummary(roundTwo);
+    console.log(allSkills);
   } catch (e) {
     console.warn(e)
     alert(e)

@@ -74,14 +74,14 @@
     "name": "Jack",
     "dob": "1992-01-12T00:00:00Z",
     "interests": ["Cycling", "Gaming"],
-    "skills": ["CSS", "React"],
+    "skills": ["CSS", "React", "HTML"],
     "onlineOnly": false
   },
   {
     "name": "Kathy",
     "dob": "1987-06-05T00:00:00Z",
     "interests": ["Skiing", "Cooking"],
-    "skills": ["Vue", "JS"],
+    "skills": ["Vue", "JS", "Svelte", "Tailwind"],
     "onlineOnly": true,
     "cvURL": "http://example.com/kathy-cv"
   },
